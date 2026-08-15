@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Bibarys Smanov",
+  "url": "https://difdyuk.github.io/",
+  "jobTitle": "IT & Cybersecurity Student",
+  "description": "Information Technology and Cybersecurity student, software developer and technology builder from Astana, Kazakhstan.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Astana",
+    "addressCountry": "KZ"
+  },
+  "sameAs": [
+    "https://github.com/DifDyuk"
+  ]
+}
+</script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.182.0/build/three.module.js",
+    "jsm/": "https://cdn.jsdelivr.net/npm/three@0.182.0/examples/jsm/"
+  }
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bibarys Smanov — IT & Cybersecurity</title>
+<meta name="description" content="Bibarys Smanov — Information Technology and Cybersecurity student, software developer, AI enthusiast and builder from Astana, Kazakhstan.">
+<meta name="author" content="Bibarys Smanov">
+<meta name="keywords" content="Bibarys Smanov, Bibarys, Smanov Bibarys, cybersecurity, software developer, IT, Python, Java, C++, Astana, Kazakhstan">
+<meta property="og:title" content="Bibarys Smanov — IT & Cybersecurity">
+<meta property="og:description" content="Personal portfolio of Bibarys Smanov — IT, cybersecurity, software development, AI and technology projects.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#070b0d; --panel:#0d1417; --panel2:#111b1f; --border:#1c2b30;
+  --border2:#2a4148; --text:#e4eef0; --muted:#789096; --dim:#4b6065;
+  --green:#00e5a0; --green2:#00a878; --blue:#53c7ff; --purple:#9b8cff;
+  --red:#ff5f56; --amber:#ffb000; --mono:'JetBrains Mono',monospace; --sans:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;
+background:repeating-linear-gradient(to bottom,rgba(255,255,255,.012) 0,rgba(255,255,255,.012) 1px,transparent 1px,transparent 4px)}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+background:radial-gradient(circle at 50% 0%,rgba(0,229,160,.08),transparent 45%),
+radial-gradient(circle at 90% 40%,rgba(83,199,255,.04),transparent 30%)}
+a{color:inherit;text-decoration:none}.wrap{max-width:1080px;margin:auto;padding:0 25px}
+nav{position:sticky;top:0;z-index:100;background:rgba(7,11,13,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav{height:58px;display:flex;align-items:center;justify-content:space-between;font:13px var(--mono)}
+.logo{font-weight:800;color:#fff}.logo span{color:var(--green)}
+.links{display:flex;gap:22px;color:var(--muted)}.links a:hover{color:var(--green)}
+.status{display:flex;align-items:center;gap:7px;color:var(--green);font-size:11px}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 1.5s infinite}
+@keyframes pulse{50%{opacity:.3}}
+
+.hero{padding:90px 0 80px;border-bottom:1px solid var(--border)}
+.boot{font:12px/1.9 var(--mono);color:var(--dim);margin-bottom:35px}
+.ok{color:var(--green2)}.tag{color:var(--blue)}
+h1{font:800 clamp(48px,9vw,92px)/.95 var(--mono);letter-spacing:-.055em;color:#fff}
+h1 span{color:var(--green);text-shadow:0 0 28px rgba(0,229,160,.4)}
+.role{font:600 20px var(--mono);color:var(--green);margin-top:18px}
+.location{color:var(--muted);margin-top:9px}
+.lead{max-width:760px;font-size:18px;line-height:1.75;margin-top:25px;color:#cbd8da}
+.lead strong{color:var(--green)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border:1px solid var(--border2);border-radius:6px;font:600 12px var(--mono)}
+.btn.primary{background:var(--green);color:#04110c;border-color:var(--green)}.btn:hover{border-color:var(--green);color:var(--green)}
+.btn.primary:hover{color:#04110c;box-shadow:0 0 25px rgba(0,229,160,.3)}
+
+section{padding:75px 0;border-bottom:1px solid var(--border)}
+.head{display:flex;align-items:baseline;gap:12px;margin-bottom:28px}
+.num{font:13px var(--mono);color:var(--green)}.title{font:700 25px var(--mono);color:#fff}
+.rule{height:1px;flex:1;background:linear-gradient(90deg,var(--border2),transparent)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:9px;padding:24px;transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:var(--green)}
+.card h3{font:700 17px var(--mono);color:#fff;margin-bottom:9px}
+.card p{font-size:14px;line-height:1.7;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+.chip{font:11px var(--mono);color:var(--blue);border:1px solid rgba(83,199,255,.25);background:rgba(83,199,255,.06);padding:4px 9px;border-radius:20px}
+
+.about{display:grid;grid-template-columns:1.4fr .8fr;gap:20px}
+.terminal{background:var(--panel);border:1px solid var(--border);border-radius:9px;overflow:hidden}
+.termbar{padding:10px 14px;background:var(--panel2);border-bottom:1px solid var(--border);font:11px var(--mono);color:var(--muted)}
+.termbody{padding:22px;font:13px/1.9 var(--mono);color:var(--muted)}
+.k{color:var(--amber)}.v{color:#e8f0f2}
+
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:18px}
+.stat b{display:block;font:800 28px var(--mono);color:var(--green)}.stat span{font-size:11px;color:var(--muted)}
+
+.skill{margin-bottom:15px}.skilltop{display:flex;justify-content:space-between;font:12px var(--mono);margin-bottom:7px}.skilltop span:last-child{color:var(--muted)}
+.track{height:7px;background:var(--panel2);border:1px solid var(--border);border-radius:5px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--green2),var(--green));width:0;transition:1.2s}
+
+.project{display:flex;flex-direction:column;min-height:205px}.project .link{margin-top:auto;padding-top:18px;color:var(--green);font:12px var(--mono)}
+.project .link:hover{text-decoration:underline}
+
+.timeline{border-left:2px solid var(--border2);margin-left:7px;padding-left:25px}
+.event{position:relative;margin-bottom:35px}.event:last-child{margin-bottom:0}
+.event:before{content:"";position:absolute;left:-32px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--green)}
+.date{font:11px var(--mono);color:var(--green);text-transform:uppercase}.event h3{font:700 18px var(--mono);margin:7px 0}.event p{color:var(--muted);font-size:14px;line-height:1.7;max-width:700px}
+
+.blog{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.blog .card{min-height:180px}
+.blog small{font:10px var(--mono);color:var(--purple)}.blog h3{margin-top:12px}
+
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:16px}.contact a{display:block;padding:16px;background:var(--panel);border:1px solid var(--border);border-radius:8px}
+.contact label{display:block;font:10px var(--mono);color:var(--dim);text-transform:uppercase;margin-bottom:5px}.contact strong{font:13px var(--mono);color:#fff}
+
+footer{padding:35px 0 55px;text-align:center;color:var(--dim);font:11px var(--mono)}
+
+@media(max-width:760px){
+ .links{display:none}.grid,.about,.contact,.blog{grid-template-columns:1fr}
+ .hero{padding:65px 0 55px}.lead{font-size:16px}section{padding:55px 0}
+ .title{font-size:20px}.wrap{padding:0 18px}
+}
+
+
+/* ===== 3D CYBER PORTFOLIO ===== */
+.webgl{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block;pointer-events:auto;
+background:radial-gradient(circle at 50% 45%,rgba(0,229,160,.05),transparent 55%),var(--bg)}
+.webgl.is-off{display:none}
+nav,.hero,section,footer{position:relative;z-index:3}
+#cursor,#cursor-ring{display:none}
+body.custom-cursor{cursor:none}
+body.custom-cursor #cursor{display:block;position:fixed;left:0;top:0;width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 18px rgba(0,229,160,.7);transform:translate(-50%,-50%);pointer-events:none;z-index:10000;mix-blend-mode:screen;will-change:transform}
+body.custom-cursor #cursor-ring{display:block;position:fixed;left:0;top:0;width:38px;height:38px;border:1px solid rgba(0,229,160,.45);border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;transition:width .25s,height .25s,border-color .25s;will-change:transform}
+body.custom-cursor:has(.webgl:hover) #cursor-ring{width:62px;height:62px;border-color:var(--green)}
+.scanlines{position:fixed;inset:0;pointer-events:none;z-index:998;background:repeating-linear-gradient(to bottom,transparent 0,transparent 3px,rgba(0,0,0,.08) 3px,rgba(0,0,0,.08) 4px);opacity:.32}
+.hud{position:fixed;z-index:4;pointer-events:none;font:9px/1.8 var(--mono);letter-spacing:.16em;color:rgba(0,229,160,.42);text-transform:uppercase}
+.hud span{display:block}.hud-tl{top:76px;left:28px}.hud-tr{top:76px;right:28px;text-align:right}.hud-br{right:28px;bottom:25px;text-align:right}
+.hero{min-height:calc(100vh - 58px);display:flex;align-items:center;background:radial-gradient(circle at 50% 50%,rgba(0,229,160,.025),transparent 38%)}
+.hero .wrap{width:100%}
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 70% 50%,transparent 0,transparent 30%,rgba(7,11,13,.72) 75%);z-index:-1}
+.hero h1,.hero .role,.hero .location,.hero .lead,.hero .actions,.hero .boot{text-shadow:0 2px 24px rgba(0,0,0,.65)}
+.card,.terminal,.stat,.contact a{backdrop-filter:blur(8px);background:rgba(13,20,23,.68);box-shadow:0 20px 80px rgba(0,0,0,.16)}
+.card:hover{box-shadow:0 0 35px rgba(0,229,160,.07)}
+@media(max-width:760px){.hud,#cursor,#cursor-ring{display:none}body{cursor:auto}.hero:after{background:rgba(7,11,13,.55)}}
+
+</style>
+</head>
+
+<body>
+<canvas class="webgl" aria-hidden="true"></canvas>
+<div class="scanlines" aria-hidden="true"></div>
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+<div class="hud hud-tl" aria-hidden="true"><span>SYS / BIBARYS.SMANOV</span><span>WEBGL CORE / ONLINE</span></div>
+<div class="hud hud-tr" aria-hidden="true"><span id="hud-x">X +0.000</span><span id="hud-y">Y +0.000</span><span>Z +7.000</span></div>
+<div class="hud hud-br" aria-hidden="true"><span>ASTANA / KZ</span><span id="hud-frame">FRAME 000000</span></div>
+  
+<nav>
+  <div class="wrap nav">
+    <a class="logo" href="#">BIBARYS<span>.DEV</span></a>
+    <div class="links">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+      <a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </div>
+    <div class="status"><i class="pulse"></i> OPEN TO OPPORTUNITIES</div>
+  </div>
+</nav>
+
+<header class="hero">
+<div class="wrap">
+  <div class="boot">
+    &gt; initializing identity_core... <span class="ok">OK</span><br>
+    &gt; loading professional profile... <span class="ok">OK</span><br>
+    &gt; location: <span class="tag">ASTANA, KAZAKHSTAN</span><br>
+    &gt; access level: <span class="tag">BUILDER / LEARNER</span>
+  </div>
+  <h1>Bibarys <span>Smanov_</span></h1>
+  <div class="role">&gt; Information Technology &amp; Cybersecurity</div>
+  <div class="location">Astana, Kazakhstan · Software · Security · AI · Automation</div>
+  <p class="lead">
+    I am an <strong>IT and Cybersecurity student, developer and technology builder</strong>
+    focused on turning ideas into working software. I explore secure development, AI,
+    automation, Linux, networking and modern web technologies while building practical projects
+    and continuously expanding my technical skill set.
+  </p>
+  <div class="actions">
+    <a class="btn primary" href="#projects">→ Explore My Projects</a>
+    <a class="btn" href="https://github.com/DifDyuk" target="_blank" rel="noopener">GitHub ↗</a>
+    <a class="btn" href="#contact">Contact Me</a>
+  </div>
+</div>
+</header>
+
+<section id="about">
+<div class="wrap">
+  <div class="head"><span class="num">01</span><span class="title">about --identity</span><span class="rule"></span></div>
+  <div class="about">
+    <div class="terminal">
+      <div class="termbar">/home/bibarys/about.txt</div>
+      <div class="termbody">
+        <span class="k">name:</span> <span class="v">Bibarys Smanov</span><br>
+        <span class="k">field:</span> <span class="v">Information Technology &amp; Cybersecurity</span><br>
+        <span class="k">base:</span> <span class="v">Astana, Kazakhstan</span><br>
+        <span class="k">focus:</span> <span class="v">software engineering, cybersecurity, AI</span><br>
+        <span class="k">mindset:</span> <span class="v">learn → build → test → improve</span><br>
+        <span class="k">languages:</span> <span class="v">Russian, Kazakh, Turkish, English</span><br><br>
+        I enjoy building systems that connect software, automation and security.
+        My portfolio is a record of what I have learned, built and improved over time.
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>20</b><span>YEARS OLD</span></div>
+      <div class="stat"><b>4+</b><span>CORE LANGUAGES / TECHNOLOGIES</span></div>
+      <div class="stat"><b>∞</b><span>ROOM TO GROW</span></div>
+      <div class="stat"><b>24/7</b><span>CURIOSITY MODE</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="skills">
+<div class="wrap">
+  <div class="head"><span class="num">02</span><span class="title">system_scan --skills</span><span class="rule"></span></div>
+  <div class="terminal"><div class="termbar">skills_report.log — capability map</div><div class="termbody">
+    <div class="skill"><div class="skilltop"><span>Python</span><span>Advanced practice</span></div><div class="track"><div class="fill" data-w="88"></div></div></div>
+    <div class="skill"><div class="skilltop"><span>Java</span><span>Working proficiency</span></div><div class="track"><div class="fill" data-w="76"></div></div></div>
+    <div class="skill"><div class="skilltop"><span>C++</span><span>Working proficiency</span></div><div class="track"><div class="fill" data-w="72"></div></div></div>
+    <div class="skill"><div class="skilltop"><span>SQL / GIS</span><span>Practical experience</span></div><div class="track"><div class="fill" data-w="80"></div></div></div>
+    <div class="skill"><div class="skilltop"><span>Web Development</span><span>HTML / CSS / JS</span></div><div class="track"><div class="fill" data-w="82"></div></div></div>
+    <div class="skill"><div class="skilltop"><span>Cybersecurity</span><span>Developing specialization</span></div><div class="track"><div class="fill" data-w="70"></div></div></div>
+    <div class="skill"><div class="skilltop"><span>Linux / Git</span><span>Hands-on</span></div><div class="track"><div class="fill" data-w="78"></div></div></div>
+  </div></div>
+  <div class="chips">
+    <span class="chip">Python</span><span class="chip">Java</span><span class="chip">C++</span><span class="chip">SQL</span>
+    <span class="chip">JavaScript</span><span class="chip">HTML/CSS</span><span class="chip">Linux</span><span class="chip">Git</span>
+    <span class="chip">GIS</span><span class="chip">AI</span><span class="chip">Automation</span><span class="chip">Web Security</span>
+  </div>
+</div>
+</section>
+
+<section id="projects">
+<div class="wrap">
+  <div class="head"><span class="num">03</span><span class="title">ls -la ~/projects</span><span class="rule"></span></div>
+  <div class="grid">
+    <article class="card project">
+      <h3>Jarvis-AI</h3>
+      <p>A personal AI assistant project built around Python, local AI experimentation, voice interaction and automation. A practical exploration of how an intelligent assistant can connect language, tools and everyday workflows.</p>
+      <div class="chips"><span class="chip">Python</span><span class="chip">AI</span><span class="chip">Voice</span><span class="chip">Automation</span></div>
+      <a class="link" href="https://github.com/DifDyuk/Jarvis-AI" target="_blank" rel="noopener">→ View repository</a>
+    </article>
+    <article class="card project">
+      <h3>MusicLight-Yandex</h3>
+      <p>A real-time music-light synchronization system. It analyzes audio characteristics and controls a smart Yandex Matter lamp to create dynamic lighting effects synchronized with music.</p>
+      <div class="chips"><span class="chip">Python</span><span class="chip">NumPy</span><span class="chip">Matter</span><span class="chip">IoT</span></div>
+      <a class="link" href="https://github.com/DifDyuk/MusicLight-Yandex" target="_blank" rel="noopener">→ View repository</a>
+    </article>
+    <article class="card project">
+      <h3>FatiFit</h3>
+      <p>A fitness-center website concept focused on a calm, welcoming digital experience for women, combining clean presentation, responsive web design and accessible service information.</p>
+      <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Web Design</span></div>
+      <a class="link" href="https://github.com/DifDyuk/fatifit" target="_blank" rel="noopener">→ View repository</a>
+    </article>
+    <article class="card project">
+      <h3>TeamTrustGate / TrustMe</h3>
+      <p>Concept work around digital trust, collaboration and secure online interaction. These projects reflect my interest in combining product thinking with software engineering and cybersecurity.</p>
+      <div class="chips"><span class="chip">Security</span><span class="chip">Web</span><span class="chip">Product</span></div>
+      <div class="link">→ Portfolio project</div>
+    </article>
+  </div>
+</div>
+</section>
+
+<section id="experience">
+<div class="wrap">
+  <div class="head"><span class="num">04</span><span class="title">cat experience.log</span><span class="rule"></span></div>
+  <div class="timeline">
+    <div class="event">
+      <div class="date">Practical experience</div>
+      <h3>Kazakhstan GIS Center</h3>
+      <p>Worked with SQL, GIS technologies and Java during practical training. This experience strengthened my understanding of databases, geospatial systems and applied software development.</p>
+    </div>
+    <div class="event">
+      <div class="date">Volunteer experience</div>
+      <h3>Programming Volunteer</h3>
+      <p>Helped teach programming to children and supported their first steps in technology. Teaching improved my communication skills and reinforced my own understanding of programming fundamentals.</p>
+    </div>
+    <div class="event">
+      <div class="date">ICPC World Finals 2024</div>
+      <h3>Volunteer — Astana</h3>
+      <p>Completed 43 hours of volunteer work at the ICPC World Finals held in Astana, gaining experience in an international competitive-programming environment.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="education">
+<div class="wrap">
+  <div class="head"><span class="num">05</span><span class="title">cat education.log</span><span class="rule"></span></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Astana IT University</h3>
+      <p><strong>Information Technology &amp; Cybersecurity</strong><br>Astana, Kazakhstan · Current studies</p>
+      <div class="chips"><span class="chip">Cybersecurity</span><span class="chip">Programming</span><span class="chip">IT</span></div>
+    </div>
+    <div class="card">
+      <h3>Eurasian Humanitarian Institute</h3>
+      <p>Secondary special education with exposure to multimedia, 3D modeling, web development and information security.</p>
+      <div class="chips"><span class="chip">Web Development</span><span class="chip">3D</span><span class="chip">Information Security</span></div>
+    </div>
+    <div class="card">
+      <h3>International Academic Experience</h3>
+      <p>Academic experience in Turkey and language preparation experience in China, broadening my international perspective and communication skills.</p>
+      <div class="chips"><span class="chip">Turkey</span><span class="chip">China</span><span class="chip">International</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="certificates">
+<div class="wrap">
+  <div class="head"><span class="num">06</span><span class="title">achievements --list</span><span class="rule"></span></div>
+  <div class="grid">
+    <div class="card"><h3>AI Fundamentals with IBM SkillsBuild</h3><p>AI foundations covering topics such as NLP, computer vision, machine learning, deep learning, chatbots, neural networks and responsible AI concepts.</p><div class="chips"><span class="chip">AI</span><span class="chip">IBM SkillsBuild</span></div></div>
+    <div class="card"><h3>Cybersecurity Essentials</h3><p>Foundational cybersecurity training through Cisco Networking Academy as part of a cybersecurity learning pathway.</p><div class="chips"><span class="chip">Cisco</span><span class="chip">Cybersecurity</span></div></div>
+    <div class="card"><h3>Red Hat System Administration I — RH124</h3><p>Hands-on Linux system administration training with Red Hat, covering core administration concepts and practical system management.</p><div class="chips"><span class="chip">Red Hat</span><span class="chip">Linux</span></div></div>
+    <div class="card"><h3>EPAM / Programming &amp; Online Learning</h3><p>Additional technical learning across programming and professional development through online education platforms and technical courses.</p><div class="chips"><span class="chip">Programming</span><span class="chip">Continuous Learning</span></div></div>
+  </div>
+</div>
+</section>
+
+<section id="blog">
+<div class="wrap">
+  <div class="head"><span class="num">07</span><span class="title">devlog --future</span><span class="rule"></span></div>
+  <div class="blog">
+    <article class="card"><small>01 / SECURITY</small><h3>Building a Personal Cybersecurity Lab</h3><p>Documenting how I build safe local environments for learning networking, web security and defensive engineering.</p></article>
+    <article class="card"><small>02 / AI</small><h3>What I Learned Building Jarvis-AI</h3><p>Lessons from combining local AI models, voice interfaces, Python and automation into one personal project.</p></article>
+    <article class="card"><small>03 / ENGINEERING</small><h3>From Idea to GitHub Repository</h3><p>A practical look at how I turn small ideas into documented, testable and presentable software projects.</p></article>
+  </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap">
+  <div class="head"><span class="num">08</span><span class="title">contact --init</span><span class="rule"></span></div>
+  <div class="contact">
+    <a href="https://github.com/DifDyuk" target="_blank" rel="noopener"><label>GitHub</label><strong>github.com/DifDyuk ↗</strong></a>
+    <a href="mailto:1qazzaq1zxccxz@gmail.com"><label>Email</label><strong>1qazzaq1zxccxz@gmail.com</strong></a>
+    <a href="#contact"><label>Location</label><strong>Astana, Kazakhstan</strong></a>
+    <a href="#contact"><label>Availability</label><strong>Open to internships, projects &amp; opportunities</strong></a>
+  </div>
+</div>
+</section>
+
+<footer>
+  © 2026 Bibarys Smanov · Built with code, curiosity and continuous learning.
+</footer>
+
+<script>
+const bars=document.querySelectorAll('.fill');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.style.width=e.target.dataset.w+'%';observer.unobserve(e.target);}
+  });
+},{threshold:.25});
+bars.forEach(b=>observer.observe(b));
+</script>
+
+<script type="module">
+import * as THREE from "three";
+import {EffectComposer} from "jsm/postprocessing/EffectComposer.js";
+import {RenderPass} from "jsm/postprocessing/RenderPass.js";
+import {UnrealBloomPass} from "jsm/postprocessing/UnrealBloomPass.js";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const prefersReducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const isMobile = matchMedia("(max-width:760px)").matches || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+const canvas = document.querySelector(".webgl");
+
+// Smooth scroll — independent of WebGL, so scrolling stays good even if 3D fails
+const lenis=new Lenis({duration:1.15,smoothWheel:true,syncTouch:true,easing:t=>1-Math.pow(1-t,4)});
+lenis.on("scroll",ScrollTrigger.update);
+gsap.ticker.add(time=>lenis.raf(time*1000));
+gsap.ticker.lagSmoothing(0);
+
+// Custom cursor: only for devices with an actual precise pointer, and only once it's live —
+// prevents a stray dot stuck in the corner on touch devices or if this fails to init.
+if(matchMedia("(pointer:fine)").matches && !isMobile){
+  document.body.classList.add("custom-cursor");
+  const cursor=document.getElementById("cursor"),ring=document.getElementById("cursor-ring");
+  const hudX=document.getElementById("hud-x"),hudY=document.getElementById("hud-y");
+  let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+  addEventListener("pointermove",e=>{
+    mx=e.clientX;my=e.clientY;
+    if(hudX)hudX.textContent=`X ${(mx/innerWidth*2-1).toFixed(3)}`;
+    if(hudY)hudY.textContent=`Y ${(-my/innerHeight*2+1).toFixed(3)}`;
+  },{passive:true});
+  (function cursorLoop(){
+    rx+=(mx-rx)*.12;ry+=(my-ry)*.12;
+    cursor.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`;
+    ring.style.transform=`translate(${rx}px,${ry}px) translate(-50%,-50%)`;
+    requestAnimationFrame(cursorLoop);
+  })();
+}
+
+gsap.from(".hero .boot,.hero h1,.hero .role,.hero .location,.hero .lead,.hero .actions",{opacity:0,y:24,duration:.8,stagger:.08,ease:"power3.out",delay:.2});
+
+// Detect real WebGL support before touching Three.js at all
+function hasWebGL(){
+  try{
+    const test=document.createElement("canvas");
+    return !!(window.WebGLRenderingContext && (test.getContext("webgl2")||test.getContext("webgl")));
+  }catch(e){ return false; }
+}
+
+if(hasWebGL()){
+  try{
+    initScene();
+  }catch(err){
+    console.warn("3D scene disabled — init failed:",err);
+    canvas.classList.add("is-off");
+  }
+}else{
+  canvas.classList.add("is-off");
+}
+
+function initScene(){
+  const scene=new THREE.Scene();
+  scene.background=new THREE.Color(0x070b0d);
+  const camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,100);
+  camera.position.set(0,0,7.2);
+
+  const maxDPR=isMobile?1.5:2;
+  const renderer=new THREE.WebGLRenderer({canvas,antialias:!isMobile,powerPreference:"high-performance"});
+  renderer.setSize(innerWidth,innerHeight);
+  renderer.setPixelRatio(Math.min(devicePixelRatio,maxDPR));
+  renderer.toneMapping=THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure=1.15;
+
+  const composer=new EffectComposer(renderer);
+  composer.addPass(new RenderPass(scene,camera));
+  const bloom=new UnrealBloomPass(new THREE.Vector2(innerWidth,innerHeight),isMobile?.5:.85,.5,.6);
+  composer.addPass(bloom);
+
+  scene.add(new THREE.AmbientLight(0x6ffff0,.4));
+  const key=new THREE.DirectionalLight(0x00e5a0,2.4);key.position.set(3,4,5);scene.add(key);
+  const fill=new THREE.DirectionalLight(0x53c7ff,.6);fill.position.set(-4,-2,-3);scene.add(fill);
+
+  const core=new THREE.Group();scene.add(core);
+  const TORUS_R=1.7,TORUS_r=.46;
+
+  // ── Barycentric wireframe inner torus — traces every triangle edge in green fire
+  function addBarycentricCoords(geo){
+    const g=geo.toNonIndexed();
+    const c=g.attributes.position.count;
+    const bary=new Float32Array(c*3);
+    for(let i=0;i<c;i+=3){
+      bary[i*3]=1;bary[i*3+1]=0;bary[i*3+2]=0;
+      bary[(i+1)*3]=0;bary[(i+1)*3+1]=1;bary[(i+1)*3+2]=0;
+      bary[(i+2)*3]=0;bary[(i+2)*3+1]=0;bary[(i+2)*3+2]=1;
+    }
+    g.setAttribute("barycentric",new THREE.BufferAttribute(bary,3));
+    return g;
+  }
+  const wireMaterial=new THREE.ShaderMaterial({
+    vertexShader:`attribute vec3 barycentric;varying vec3 vBary;
+      void main(){vBary=barycentric;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}`,
+    fragmentShader:`varying vec3 vBary;
+      float wireMask(vec3 b,float t){vec3 d=fwidth(b);vec3 a=smoothstep(vec3(0.0),d*t,b);return 1.0-min(a.x,min(a.y,a.z));}
+      void main(){
+        float wf=wireMask(vBary,1.5);
+        vec3 col=mix(vec3(0.0,0.03,0.025),vec3(0.0,0.9,0.63),wf);
+        col=mix(col,vec3(0.4,1.0,0.9)*1.8,wf*0.5);
+        gl_FragColor=vec4(col,1.0);
+      }`,
+    side:THREE.DoubleSide,
+    extensions:{derivatives:true}
+  });
+  core.add(new THREE.Mesh(addBarycentricCoords(new THREE.TorusGeometry(TORUS_R,TORUS_r,isMobile?36:72,isMobile?36:72)),wireMaterial));
+
+  // ── Voronoi-fragmented shell — same idea as the reference build, but far lighter:
+  // cell density is capped well below 2500 fragments (that many individual draw calls
+  // is a real frame-rate risk), and it's cut again on mobile.
+  const FRAG_SCALE=isMobile?7:15;
+  function hash2(px,py){
+    const a=Math.sin(px*127.1+py*311.7)*43758.5453,b=Math.sin(px*269.5+py*183.3)*43758.5453;
+    return[a-Math.floor(a),b-Math.floor(b)];
+  }
+  function cellSeed(u,v){
+    const n=[Math.floor(u*FRAG_SCALE),Math.floor(v*FRAG_SCALE)],f=[u*FRAG_SCALE-n[0],v*FRAG_SCALE-n[1]];
+    let md=Infinity,best=[...n];
+    for(let j=-1;j<=1;j++)for(let i=-1;i<=1;i++){
+      const o=hash2(n[0]+i,n[1]+j),r=[i+o[0]-f[0],j+o[1]-f[1]],d=r[0]*r[0]+r[1]*r[1];
+      if(d<md){md=d;best=[n[0]+i+o[0],n[1]+j+o[1]];}
+    }
+    return[best[0]/FRAG_SCALE,best[1]/FRAG_SCALE];
+  }
+
+  const fragMat=new THREE.MeshStandardMaterial({color:0x142629,metalness:.6,roughness:.32,emissive:0x00201a,emissiveIntensity:.5,side:THREE.DoubleSide});
+
+  const fragments=(()=>{
+    const segs=isMobile?44:72;
+    const baseGeo=new THREE.TorusGeometry(TORUS_R,TORUS_r,segs,segs);
+    const nonIndexed=baseGeo.toNonIndexed();
+    baseGeo.dispose();
+    const pos=nonIndexed.attributes.position.array,nrm=nonIndexed.attributes.normal.array,uv=nonIndexed.attributes.uv.array;
+    const tris=pos.length/9;
+    const cellMap=new Map();
+    for(let t=0;t<tris;t++){
+      const uc=(uv[t*6]+uv[t*6+2]+uv[t*6+4])/3,vc=(uv[t*6+1]+uv[t*6+3]+uv[t*6+5])/3;
+      const s=cellSeed(uc,vc),k=s[0].toFixed(6)+"_"+s[1].toFixed(6);
+      if(!cellMap.has(k))cellMap.set(k,{s,t:[]});
+      cellMap.get(k).t.push(t);
+    }
+    const list=[],TWO_PI=Math.PI*2;
+    for(const{s:seed,t:triList}of cellMap.values()){
+      if(!triList.length)continue;
+      const vc=triList.length*3,pArr=new Float32Array(vc*3),nArr=new Float32Array(vc*3);
+      let vi=0;
+      for(const tri of triList)for(let v=0;v<3;v++){
+        const sv=tri*3+v;
+        pArr[vi*3]=pos[sv*3];pArr[vi*3+1]=pos[sv*3+1];pArr[vi*3+2]=pos[sv*3+2];
+        nArr[vi*3]=nrm[sv*3];nArr[vi*3+1]=nrm[sv*3+1];nArr[vi*3+2]=nrm[sv*3+2];
+        vi++;
+      }
+      const phi=seed[0]*TWO_PI,theta=seed[1]*TWO_PI;
+      const cx=(TORUS_R+TORUS_r*Math.cos(theta))*Math.cos(phi),cy=(TORUS_R+TORUS_r*Math.cos(theta))*Math.sin(phi),cz=TORUS_r*Math.sin(theta);
+      const cellCenter=new THREE.Vector3(cx,cy,cz);
+      const majorPt=new THREE.Vector3(TORUS_R*Math.cos(phi),TORUS_R*Math.sin(phi),0);
+      const cellNormal=cellCenter.clone().sub(majorPt).normalize();
+      const SHRINK=.94;
+      for(let i=0;i<pArr.length;i+=3){pArr[i]=(pArr[i]-cx)*SHRINK;pArr[i+1]=(pArr[i+1]-cy)*SHRINK;pArr[i+2]=(pArr[i+2]-cz)*SHRINK;}
+      const geo=new THREE.BufferGeometry();
+      geo.setAttribute("position",new THREE.BufferAttribute(pArr,3));
+      geo.setAttribute("normal",new THREE.BufferAttribute(nArr,3));
+      const rnd=hash2(seed[0]*137.53,seed[1]*137.53);
+      const up=Math.abs(cellNormal.z)<.9?new THREE.Vector3(0,0,1):new THREE.Vector3(0,1,0);
+      const tang=new THREE.Vector3().crossVectors(cellNormal,up).normalize();
+      const bitang=new THREE.Vector3().crossVectors(cellNormal,tang);
+      const aa=rnd[0]*TWO_PI;
+      const rotAxis=tang.clone().multiplyScalar(Math.cos(aa)).addScaledVector(bitang,Math.sin(aa)).normalize();
+      const mesh=new THREE.Mesh(geo,fragMat);
+      mesh.position.copy(cellCenter).addScaledVector(cellNormal,.012);
+      mesh.userData={cellCenter,cellNormal,rotAxis,maxAngle:.6+rnd[1]*.7,lift:0};
+      core.add(mesh);
+      list.push(mesh);
+    }
+    nonIndexed.dispose();
+    return list;
+  })();
+
+  // Faint particle field for depth — cheap, a single draw call
+  const count=isMobile?400:900,positions=new Float32Array(count*3);
+  for(let i=0;i<count;i++){
+    const radius=3.1+Math.random()*3.2,a=Math.random()*Math.PI*2,b=Math.acos(2*Math.random()-1);
+    positions[i*3]=Math.sin(b)*Math.cos(a)*radius;
+    positions[i*3+1]=Math.cos(b)*radius*.72;
+    positions[i*3+2]=Math.sin(b)*Math.sin(a)*radius;
+  }
+  const pGeo=new THREE.BufferGeometry();
+  pGeo.setAttribute("position",new THREE.BufferAttribute(positions,3));
+  const particles=new THREE.Points(pGeo,new THREE.PointsMaterial({color:0x00e5a0,size:.018,transparent:true,opacity:.4,blending:THREE.AdditiveBlending,depthWrite:false}));
+  scene.add(particles);
+
+  // Invisible torus used only for raycasting the hover point (desktop only — no fine pointer on touch)
+  const rcMesh=new THREE.Mesh(new THREE.TorusGeometry(TORUS_R,TORUS_r,28,28),new THREE.MeshBasicMaterial({visible:false}));
+  core.add(rcMesh);
+  const raycaster=new THREE.Raycaster();
+  const pointer=new THREE.Vector2(-10,-10);
+  addEventListener("pointermove",e=>{pointer.x=e.clientX/innerWidth*2-1;pointer.y=-(e.clientY/innerHeight)*2+1},{passive:true});
+
+  function smoothstep(mn,mx,v){const t=Math.max(0,Math.min(1,(v-mn)/(mx-mn)));return t*t*(3-2*t);}
+
+  const hudFrame=document.getElementById("hud-frame");
+  const hover={point:new THREE.Vector3(),active:0};
+  const _localHover=new THREE.Vector3();
+  let running=false,frameId=null,lastT=performance.now()*.001;
+
+  function animate(){
+    if(!running)return;
+    const t=performance.now()*.001;
+    const delta=Math.min(t-lastT,.1);lastT=t;
+
+    core.rotation.y+=.0022;
+    core.rotation.x=Math.sin(t*.3)*.07;
+    core.position.x+=(pointer.x*.15-core.position.x)*.02;
+    core.position.y+=(-pointer.y*.12-core.position.y)*.02;
+    particles.rotation.y=t*.015;
+
+    if(!isMobile){
+      raycaster.setFromCamera(pointer,camera);
+      const hits=raycaster.intersectObject(rcMesh);
+      if(hits.length){
+        core.worldToLocal(_localHover.copy(hits[0].point));
+        hover.point.copy(_localHover);
+        hover.active=Math.min(hover.active+delta*5,1);
+      }else{
+        hover.active=Math.max(hover.active-delta*2.5,0);
+      }
+      for(const frag of fragments){
+        const{cellCenter,cellNormal,rotAxis,maxAngle}=frag.userData;
+        let target=0;
+        if(hover.active>.01){
+          const dist=cellCenter.distanceTo(hover.point);
+          target=(1-smoothstep(.35,.85,dist))*hover.active;
+        }
+        const speed=target>frag.userData.lift?.15:.06;
+        frag.userData.lift=THREE.MathUtils.lerp(frag.userData.lift,target,speed);
+        const lift=frag.userData.lift;
+        frag.position.copy(cellCenter).addScaledVector(cellNormal,.012+lift*.22);
+        frag.quaternion.setFromAxisAngle(rotAxis,lift*maxAngle);
+      }
+    }
+
+    bloom.strength=(isMobile?.5:.68)+hover.active*.22;
+    if(hudFrame)hudFrame.textContent="FRAME "+String(Math.floor(t*60)%1000000).padStart(6,"0");
+    composer.render();
+    frameId=requestAnimationFrame(animate);
+  }
+  function start(){ if(!running){ running=true; lastT=performance.now()*.001; animate(); } }
+  function stop(){ running=false; if(frameId)cancelAnimationFrame(frameId); }
+
+  // Pause the render loop when the tab isn't visible — saves battery/CPU
+  // and avoids a jarring jump when the user comes back.
+  document.addEventListener("visibilitychange",()=>{
+    document.hidden ? stop() : (prefersReducedMotion ? composer.render() : start());
+  });
+
+  if(prefersReducedMotion){
+    // Respect the OS-level reduced-motion preference: render one static frame,
+    // keep the entrance/scroll animations off, no continuous loop.
+    composer.render();
+  }else{
+    start();
+    gsap.from(core.scale,{x:.25,y:.25,z:.25,duration:1.8,ease:"expo.out"});
+    gsap.from(core.rotation,{x:Math.PI,y:-Math.PI,duration:2.2,ease:"power4.out"});
+    gsap.to(core.rotation,{x:Math.PI*.55,y:Math.PI*2.2,scrollTrigger:{trigger:"body",start:"top top",end:"bottom bottom",scrub:2}});
+    gsap.to(core.position,{x:2.35,y:-.35,scrollTrigger:{trigger:"#about",start:"top 80%",end:"top 20%",scrub:1.4}});
+    gsap.to(core.position,{x:-2.25,y:.25,scrollTrigger:{trigger:"#projects",start:"top 90%",end:"top 20%",scrub:1.4}});
+    gsap.to(core.scale,{x:.72,y:.72,z:.72,scrollTrigger:{trigger:"#experience",start:"top 90%",end:"top 20%",scrub:1.4}});
+    gsap.to(core.scale,{x:1,y:1,z:1,scrollTrigger:{trigger:"#contact",start:"top 90%",end:"bottom bottom",scrub:1.2}});
+  }
+
+  // Debounced resize — avoids resizing the renderer/composer on every pixel
+  // while the user is actively dragging the window, which is what causes stutter.
+  let resizeTimer=null;
+  addEventListener("resize",()=>{
+    clearTimeout(resizeTimer);
+    resizeTimer=setTimeout(()=>{
+      camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();
+      renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,maxDPR));
+      composer.setSize(innerWidth,innerHeight);
+      ScrollTrigger.refresh();
+      if(prefersReducedMotion)composer.render();
+    },150);
+  });
+}
+</script>
+</body>
+</html>
